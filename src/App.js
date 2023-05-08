@@ -1,23 +1,48 @@
-import logo from './logo.svg';
+import Video from './pages/Video';
 import './App.css';
 
 function App() {
+  let maxHeight;
+
+  if (window.innerHeight <= 800) {
+    maxHeight = window.innerHeight;
+  }
+
+
+
+  const videos = [
+  {
+    videoUrl: "https://www.w3schools.com/html/mov_bbb.mp4"
+  },
+  {
+    videoUrl: "https://www.w3schools.com/html/mov_bbb.mp4"
+  },
+  {
+    videoUrl: "https://www.w3schools.com/html/mov_bbb.mp4"
+  },
+  {
+    videoUrl: "https://www.w3schools.com/html/mov_bbb.mp4"
+  }
+];
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App" style={{ maxHeight: maxHeight + "px" }}>
+      <div className="app__videos">
+        { videos.map(video => {
+            return (
+              <Video 
+                likes={ video.likes }
+                messages={ video.messages }
+                shares={ video.shares }
+                userName={ video.userName }
+                description={ video.description }
+                music={ video.music }
+                videoUrl={ video.videoUrl }
+              />
+            );
+          }) 
+        }
+      </div>
     </div>
   );
 }
