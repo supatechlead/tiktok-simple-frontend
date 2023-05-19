@@ -1,4 +1,4 @@
-Very simple tik-tok frontend example. \
+Very simple tik-tok frontend example.
 
 ### `npm start`
 
