@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+Very simple tik-tok frontend example. \
 
 ### `npm start`
 
